@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     FileContents leftFile = readFile(args.leftFilePath);
     FileContents rightFile = readFile(args.leftFilePath);
 
-    Comparison result = compareContents(leftFile, rightFile);
+    Differences result = compareContents(leftFile, rightFile);
 
     displayResult(result);
 

@@ -6,9 +6,9 @@
 #include "FileHandler.h"
 
 
-typedef bool Comparison;
+typedef bool Differences;
 
-Comparison compareContents(const FileContents leftFile,
-                           const FileContents rightFile);
+Differences compareContents(const FileContents leftFile,
+                            const FileContents rightFile);
 
 #endif // CODE_ACADEMY_DIFF_TOOL_COMPARE_H
