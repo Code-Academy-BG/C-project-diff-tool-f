@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     struct Args args = parseArguments(argc, argv);
 
     FileContents leftFile = readFile(args.leftFilePath);
-    FileContents rightFile = readFile(args.leftFilePath);
+    FileContents rightFile = readFile(args.rightFilePath);
 
     Differences result = compareContents(leftFile, rightFile);
 

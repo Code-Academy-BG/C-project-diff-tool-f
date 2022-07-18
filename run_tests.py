@@ -39,9 +39,13 @@ def run_test(dir, left, right, id):
         process.check_returncode()
     except subprocess.CalledProcessError:
         print(f"[{id} FAIL] Program returned non-zero exit code.")
-        return False
-    else:
+        return None
+
+    try:
         return process.stdout.decode('utf-8').replace('\r', '')
+    except UnicodeDecodeError:
+        print(f"[{id} FAIL] Program printed invalid characters.")
+        return None
 
 
 def check_output(dir, out, id, actual):
@@ -62,7 +66,7 @@ def main(args):
 
     for id in range(len(out_files)):
         actual = run_test(test_dir, left_files[id], right_files[id], id)
-        if not actual:
+        if actual is None:
             continue
 
         check_output(test_dir, out_files[id], id, actual)
