@@ -1,8 +1,14 @@
 #ifndef CODE_ACADEMY_DIFF_TOOL_FILE_HANDLER_H
 #define CODE_ACADEMY_DIFF_TOOL_FILE_HANDLER_H
 
-typedef char *FileContents;
+#include<stdio.h>
+#define MAX_CHARS 200
 
-FileContents readFile(const char *filePath);
+typedef struct FileContents{
+    char ** arrayOfCurrentFile;
+    int lineNumber;
+}FileContents;
 
-#endif // CODE_ACADEMY_DIFF_TOOL_FILE_HANDLER_H
+FileContents * readFile(const char *filePath);
+
+#endif

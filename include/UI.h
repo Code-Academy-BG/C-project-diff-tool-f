@@ -3,7 +3,6 @@
 
 #include "Compare.h"
 
+void displayResult(Differences *result);
 
-void displayResult(const Differences result);
-
-#endif // CODE_ACADEMY_DIFF_TOOL_UI_H
+#endif
